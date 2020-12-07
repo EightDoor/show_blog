@@ -11,8 +11,121 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32327c2e-ce7b-4275-a45f-38e2da183ca9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2019/10/04/动态表单实现/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2019/10/04/小程序个人博客发布啦/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/01/11/app分发平台/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/01/12/ionic请求jira接口/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/01/13/树莓派-宝塔、frp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/01/14/Vue3-0源码解读/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/01/14/code-push/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/01/14/个人vscode配置setting-json/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/01/18/转-vscode使用编程字体/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/01/19/gitlab代码量统计/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/01/20/直播管理/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/01/22/Vue3-0响应式原理/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/01/22/vue2-0响应式原理实现-对象-数组/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/01/22/【ES6基础】Map与WeakMap/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/01/23/从0实现react/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/01/29/taro多端开发/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/02/09/Mac-下chromium缺少Google-API-密钥，因此-chromium的部分功能将无法使用/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/02/17/WebStorm2019-Mac版破解/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/02/18/Mac系统上安装FFmpeg/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/02/19/angular打包错误ERROR-in-Illegal-State-issue-when-giving-angular-build/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/02/22/下载electron失败/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/02/26/prettierrc文件常见配置/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/03/12/Koa-router异步问题/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/03/18/equivalent/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/03/23/你所不知道的模块调试技巧-npm-link/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/04/12/vscode-node-js应用代码调试/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/12/07/家里树莓派配置/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/404/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAxOS8xMC8wNC/liqjmgIHooajljZXlrp7njrA.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAxOS8xMC8wNC/lsI/nqIvluo/kuKrkurrljZrlrqLlj5HluIPllaY.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMS8xMS9hcHDliIblj5HlubPlj7A.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMS8xMi9pb25pY+ivt+axgmppcmHmjqXlj6M.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMS8xMy/moJHojpPmtL4t5a6d5aGU44CBZnJw.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMS8xNC/kuKrkurp2c2NvZGXphY3nva5zZXR0aW5nLWpzb24.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMS8xNC9WdWUzLTDmupDnoIHop6Por7s.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMS8xNC9jb2RlLXB1c2g.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMS8xOC/ovawtdnNjb2Rl5L2/55So57yW56iL5a2X5L2T.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMS8xOS9naXRsYWLku6PnoIHph4/nu5/orqE.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMS8yMC/nm7Tmkq3nrqHnkIY.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMS8yMi/jgJBFUzbln7rnoYDjgJFNYXDkuI5XZWFrTWFw.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMS8yMi92dWUyLTDlk43lupTlvI/ljp/nkIblrp7njrAt5a+56LGhLeaVsOe7hA.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMS8yMi9WdWUzLTDlk43lupTlvI/ljp/nkIY.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMS8yMy/ku44w5a6e546wcmVhY3Q.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMS8yOS90YXJv5aSa56uv5byA5Y+R.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMi8wOS9NYWMt5LiLY2hyb21pdW3nvLrlsJFHb29nbGUtQVBJLeWvhumSpe+8jOWboOatpC1jaHJvbWl1beeahOmDqOWIhuWKn+iDveWwhuaXoOazleS9v+eUqA.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMi8xNy9XZWJTdG9ybTIwMTktTWFj54mI56C06Kej.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMi8xOC9NYWPns7vnu5/kuIrlronoo4VGRm1wZWc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMi8xOS9hbmd1bGFy5omT5YyF6ZSZ6K+vRVJST1ItaW4tSWxsZWdhbC1TdGF0ZS1pc3N1ZS13aGVuLWdpdmluZy1hbmd1bGFyLWJ1aWxk.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMi8yMi/kuIvovb1lbGVjdHJvbuWksei0pQ.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMi8yNi9wcmV0dGllcnJj5paH5Lu25bi46KeB6YWN572u.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMy8xMi9Lb2Etcm91dGVy5byC5q2l6Zeu6aKY.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMy8xOC9lcXVpdmFsZW50.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wMy8yMy/kvaDmiYDkuI3nn6XpgZPnmoTmqKHlnZfosIPor5XmioDlt6ctbnBtLWxpbms.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8wNC8xMi92c2NvZGUtbm9kZS1qc+W6lOeUqOS7o+eggeiwg+ivlQ.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/MjAyMC8xMi8wNy/lrrbph4zmoJHojpPmtL7phY3nva4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/Y2F0ZWdvcmllcw.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/Y2F0ZWdvcmllcy/lhbbku5Y.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/Y2F0ZWdvcmllcy/liY3nq68.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/Y2F0ZWdvcmllcy/miZPljIU.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/Y2F0ZWdvcmllcy/moJHojpPmtL4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/Y2F0ZWdvcmllcy90YXJv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/Y2F0ZWdvcmllcy92dWU.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/Y2F0ZWdvcmllcy9lbGVjdHJvbg.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/Y2F0ZWdvcmllcy9qYXZhc2NyaXB0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/Y2F0ZWdvcmllcy9ub2Rl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/Y2F0ZWdvcmllcy9weXRob24.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/Y2F0ZWdvcmllcy9yZWFjdA.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/Y2F0ZWdvcmllcy9yZWFjdC1uYXRpdmU.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/YXJjaGl2ZXM.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/YXJjaGl2ZXMvMg.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/YXJjaGl2ZXMvMw.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/c2VhcmNo.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/cGFnZQ.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/cGFnZS8y.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/cGFnZS8z.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/dGFncw.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/dGFncy/lhbbku5Y.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/dGFncy/liY3nq68.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/dGFncy/liY3nq68vMg.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/dGFncy/lt6Xlhbc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/api/dGFncy9rb2E.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/3/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/electron/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/javascript/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/node/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/python/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/react-native/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/react/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/taro/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/vue/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/其他/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/前端/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/打包/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/树莓派/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/config.f19731ece96af776198b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/main.1efb2acb62d508679d87.zh-Hans.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/2/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/3/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/polyfills.28555e618578fe61f50a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/runtime.caef73fae70e33459c5a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles.e987407a0a9d77c7ba00.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/koa/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/其他/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/前端/2/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/前端/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/工具/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/theme.6814db2ccf672c87c4fb.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +186,7 @@
       <workItem from="1581925476731" duration="164000" />
       <workItem from="1582014019996" duration="527000" />
       <workItem from="1582020362887" duration="371000" />
-      <workItem from="1607312377521" duration="1931000" />
+      <workItem from="1607312377521" duration="2690000" />
     </task>
     <servers />
   </component>
