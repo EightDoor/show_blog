@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>flutter 打包release部分功能无法使用</title>
+    <link href="/2021/03/27/flutter-%E6%89%93%E5%8C%85release%E9%83%A8%E5%88%86%E5%8A%9F%E8%83%BD%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8/"/>
+    <url>/2021/03/27/flutter-%E6%89%93%E5%8C%85release%E9%83%A8%E5%88%86%E5%8A%9F%E8%83%BD%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><ul><li>flutter本地测试debug打包、运行功能正常使用，但是打包release之后发现部分功能无法使用，直接卡到首屏，路由也不执行跳转</li><li>本地运行 <code>flutter run --release --verbose</code> 发现没有任何错误</li></ul><h2 id="问题猜测"><a href="#问题猜测" class="headerlink" title="问题猜测"></a>问题猜测</h2><ul><li>打包release版本参数配置问题，混淆，或者tree shaking 部分代码没有生效?</li></ul><h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><ul><li><p>参考flutter中文网   android版本打包release </p><ul><li><a href="https://flutterchina.club/android-release/">https://flutterchina.club/android-release/</a></li></ul></li><li><p>参考 release打包闪退</p><ul><li><a href="https://segmentfault.com/a/1190000021610587">https://segmentfault.com/a/1190000021610587</a></li></ul></li><li><p>直接在 app/build.gradle配置</p><p><img src="https://raw.githubusercontent.com/EightDoor/-/master/flutter%E6%89%93%E5%8C%85release.png" alt="flutter打包release"></p><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">minifyEnabled <span class="hljs-literal">false</span> <span class="hljs-comment">//删除无用代码</span><br>shrinkResources <span class="hljs-literal">false</span> <span class="hljs-comment">//删除无用资源</span><br></code></pre></td></tr></table></figure></li><li><p>重新打包问题解决</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>flutter</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>打包</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>typora 自动上传图片到gitee</title>
     <link href="/2021/03/25/typora-%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0gitee/"/>
     <url>/2021/03/25/typora-%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0gitee/</url>
