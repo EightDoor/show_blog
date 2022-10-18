@@ -1,0 +1,510 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="周凯">
+  <meta name="keywords" content="">
+  
+  <title>typora 自动上传图片到gitee - 个人博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"www.start6.cn","root":"/","version":"1.8.9a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>周凯个人博客</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="typora 自动上传图片到gitee">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-25 12:32" pubdate>
+        2021年3月25日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      14
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">typora 自动上传图片到gitee</h1>
+            
+            <div class="markdown-body">
+              <h2 id="直接安装picGo软件-https-github-com-Molunerfinn-PicGo-releases-tag-v2-3-0-beta-4"><a href="#直接安装picGo软件-https-github-com-Molunerfinn-PicGo-releases-tag-v2-3-0-beta-4" class="headerlink" title="直接安装picGo软件 https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.0-beta.4"></a>直接安装picGo软件 <a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.0-beta.4">https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.0-beta.4</a></h2><h2 id="1-使用-node-安装-PicGo-Core"><a href="#1-使用-node-安装-PicGo-Core" class="headerlink" title="1. 使用 node 安装 PicGo-Core"></a>1. 使用 node 安装 PicGo-Core</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">// npm 命令执行速度过慢的话，我们可以使用一下淘宝的镜像 <br>npm install -g picgo --registry=https://registry.npm.taobao.org<br><br>// 安装完成以后测试一下是否安装成功<br>picgo -v<br></code></pre></td></tr></table></figure>
+
+<h2 id="2-使用-picgo-命令安装-gitee-uploader-插件"><a href="#2-使用-picgo-命令安装-gitee-uploader-插件" class="headerlink" title="2. 使用 picgo 命令安装 gitee-uploader 插件"></a>2. 使用 picgo 命令安装 gitee-uploader 插件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">picgo install gitee-uploader<br></code></pre></td></tr></table></figure>
+
+<h2 id="3-使用-picgo-命令设置-uploader"><a href="#3-使用-picgo-命令设置-uploader" class="headerlink" title="3. 使用 picgo 命令设置 uploader"></a>3. 使用 picgo 命令设置 uploader</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">picgo set uploader<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs shell">C:\Users\Run\Desktop&gt;picgo set uploader<br>? Choose a(n) uploader (Use arrow keys)<br>❯ gitee<br>  smms<br>  tcyun<br>  github<br>  qiniu<br>  imgur<br>  aliyun<br>  upyun<br>(Move up and down to reveal more choices)<br><br>? Choose a(n) uploader gitee<br>? repo: xxxx/image<br>? branch: master<br>? token: 5a34fa3f348d556...<br>? path: 2020<br>? customPath: 年月<br>? customUrl: https://gitee.com/xxxx/image/raw/master/<br>[PicGo SUCCESS]: Configure config successfully!<br></code></pre></td></tr></table></figure>
+
+<h2 id="4-配置-Typro-上传服务设定"><a href="#4-配置-Typro-上传服务设定" class="headerlink" title="4. 配置 Typro 上传服务设定"></a>4. 配置 Typro 上传服务设定</h2><p><strong>重点是 <code>自定义命令</code> 的组成部分：</strong> <code>[your node path] [your picgo path] upload</code></p>
+<table>
+<thead>
+<tr>
+<th>键</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>上传服务</td>
+<td>Custom Command</td>
+</tr>
+<tr>
+<td>自定义命令</td>
+<td>D:\nodejs\node.exe D:\nodejs\node_global\node_modules\picgo\bin\picgo upload</td>
+</tr>
+</tbody></table>
+<p><strong>注意：配置完成后可以点击 <code>验证图片上传选项</code> 来测试是否配置成功</strong></p>
+<h2 id="5-完整的配置文件"><a href="#5-完整的配置文件" class="headerlink" title="5. 完整的配置文件"></a>5. 完整的配置文件</h2><p><strong>以下是参照 <a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Core-Doc/zh/guide/config.html">PicGo-Core官方文档</a> 的进行的配置</strong></p>
+<p>首先我们需要找到我们的配置文件，<strong>picgo</strong> 的默认配置文件在不同系统的目录不太一样：<br>linux 和 macOS 均为 <code>~/.picgo/config.json</code><br>windows 则为 <code>C:\Users\&#123;你的用户名&#125;\.picgo\config.json</code></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br>  <span class="hljs-attr">&quot;picBed&quot;</span>: &#123;<br>    <span class="hljs-attr">&quot;current&quot;</span>: <span class="hljs-string">&quot;gitee&quot;</span>,<br>    <span class="hljs-attr">&quot;gitee&quot;</span>: &#123;<br>      <span class="hljs-attr">&quot;repo&quot;</span>: <span class="hljs-string">&quot;xxxx/image&quot;</span>,<br>      <span class="hljs-attr">&quot;branch&quot;</span>: <span class="hljs-string">&quot;master&quot;</span>,<br>      <span class="hljs-attr">&quot;token&quot;</span>: <span class="hljs-string">&quot;5a34fa3f348d556...&quot;</span>,<br>      <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;2020&quot;</span>,<br>      <span class="hljs-attr">&quot;customPath&quot;</span>: <span class="hljs-string">&quot;yearMonth&quot;</span>,<br>      <span class="hljs-attr">&quot;customUrl&quot;</span>: <span class="hljs-string">&quot;https://gitee.com/xxxx/image/raw/master/&quot;</span><br>    &#125;,<br>    <span class="hljs-attr">&quot;uploader&quot;</span>: <span class="hljs-string">&quot;gitee&quot;</span>,<br>    <span class="hljs-attr">&quot;transformer&quot;</span>: <span class="hljs-string">&quot;path&quot;</span><br>  &#125;,<br>  <span class="hljs-attr">&quot;picgoPlugins&quot;</span>: &#123;<br>    <span class="hljs-attr">&quot;picgo-plugin-gitee-uploader&quot;</span>: <span class="hljs-literal">true</span><br>  &#125;,<br>  <span class="hljs-attr">&quot;picgo-plugin-gitee-uploader&quot;</span>: &#123;<br>    <span class="hljs-attr">&quot;lastSync&quot;</span>: <span class="hljs-string">&quot;2020-07-30 10:29:26&quot;</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="6-解决-文件大于1M，登录后可见-的问题"><a href="#6-解决-文件大于1M，登录后可见-的问题" class="headerlink" title="6. 解决 文件大于1M，登录后可见 的问题"></a>6. 解决 <code>文件大于1M，登录后可见</code> 的问题</h2><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs subunit">按照步骤 1<span class="hljs-string">-6</span> 我们确实成功地配置了一个免费好用的 Gitee图床，简单使用也没有什么问题。可是当我们上传的图片大小超过 1M 后：OMG，图片无法正常显示，在浏览器中打开图片的地址，直接跳转到 Gitee 登录界面，并且出现出现了很扎心的 文件大于1M，登录后可见 文字的提示。关键是这个文件大小限制还没有办法解决，凉凉！！！<br></code></pre></td></tr></table></figure>
+
+<p>凉凉？不存在的！ 俗话说：办法总比困难多。我们访问 git 仓库中文件的方式并不是只有一种，更何况它只是一些静态的资源文件。所以是不是只要我们想办法配置一个简单的HTTP服务就可以了。问题迎刃而解：Gitee 官方给我们提供了一种供博客 / 门户 / 开源项目网站 / 开源项目静态效果演示用途的 Git Pages服务。</p>
+<h3 id="7-1-开启-Git-Pages-服务"><a href="#7-1-开启-Git-Pages-服务" class="headerlink" title="7.1 开启 Git Pages 服务"></a>7.1 开启 Git Pages 服务</h3><ol>
+<li>进入到阁下 Gitee 图床 所在仓库的页面，找到 <code>服务</code> -&gt; <code>Gitee Pages</code></li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/080f6d5f182dc73d35ab0e3e737285bd.png" srcset="/img/loading.gif" lazyload alt="开启 Git Pages 服务"></p>
+<ol start="2">
+<li><p>无需修改任何配置。直接点击 <code>启动</code>按钮，等待服务启动完毕即可。</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/701a8a18c3690a6e95dfec7cc41bedf8.png" srcset="/img/loading.gif" lazyload alt="image"></p>
+</li>
+</ol>
+<h3 id="7-2-更新图片访问的路径"><a href="#7-2-更新图片访问的路径" class="headerlink" title="7.2 更新图片访问的路径"></a>7.2 更新图片访问的路径</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css">当我们的 图床仓库 开启 <span class="hljs-selector-tag">Git</span> <span class="hljs-selector-tag">Pages</span> 服务后，就会得到一个专属的网站地址，格式为：“ 个人空间地址<span class="hljs-selector-class">.gitee</span><span class="hljs-selector-class">.io</span>/仓库名” 。<br><br>例如：<span class="hljs-selector-tag">http</span>://<span class="hljs-selector-tag">zi1</span><span class="hljs-selector-class">.gitee</span><span class="hljs-selector-class">.io</span>/<span class="hljs-selector-tag">pic</span>，则我们访问该图床中的静态资源文件的路径为 <span class="hljs-selector-tag">http</span>://<span class="hljs-selector-tag">zi1</span><span class="hljs-selector-class">.gitee</span><span class="hljs-selector-class">.io</span>/<span class="hljs-selector-tag">pic</span> + 仓库中文件的可见路径。<br></code></pre></td></tr></table></figure>
+
+<p>比如：你的仓库中的 picture 目录下的 1.jpg 的图片文件： <code>picture/1.jpg</code>，则我们访问该图片的路径为：<code>http://zi1.gitee.io/pic/picture/1.jpg</code></p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/51947acc69b927a6ee04401c776543aa.png" srcset="/img/loading.gif" lazyload alt="image"></p>
+<h2 id="8-开启-Git-Pages-后完整的配置文件"><a href="#8-开启-Git-Pages-后完整的配置文件" class="headerlink" title="8. 开启 Git Pages 后完整的配置文件"></a>8. 开启 Git Pages 后完整的配置文件</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br>  <span class="hljs-attr">&quot;picBed&quot;</span>: &#123;<br>    <span class="hljs-attr">&quot;current&quot;</span>: <span class="hljs-string">&quot;gitee&quot;</span>,<br>    <span class="hljs-attr">&quot;gitee&quot;</span>: &#123;<br>      <span class="hljs-attr">&quot;repo&quot;</span>: <span class="hljs-string">&quot;xxxx/image&quot;</span>,<br>      <span class="hljs-attr">&quot;branch&quot;</span>: <span class="hljs-string">&quot;master&quot;</span>,<br>      <span class="hljs-attr">&quot;token&quot;</span>: <span class="hljs-string">&quot;5a34fa3f348d556...&quot;</span>,<br>      <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;2020&quot;</span>,<br>      <span class="hljs-attr">&quot;customPath&quot;</span>: <span class="hljs-string">&quot;yearMonth&quot;</span>,<br>      <span class="hljs-attr">&quot;customUrl&quot;</span>: <span class="hljs-string">&quot;https://xxxx.gitee.io/image/&quot;</span><br>    &#125;,<br>    <span class="hljs-attr">&quot;uploader&quot;</span>: <span class="hljs-string">&quot;gitee&quot;</span>,<br>    <span class="hljs-attr">&quot;transformer&quot;</span>: <span class="hljs-string">&quot;path&quot;</span><br>  &#125;,<br>  <span class="hljs-attr">&quot;picgoPlugins&quot;</span>: &#123;<br>    <span class="hljs-attr">&quot;picgo-plugin-gitee-uploader&quot;</span>: <span class="hljs-literal">true</span><br>  &#125;,<br>  <span class="hljs-attr">&quot;picgo-plugin-gitee-uploader&quot;</span>: &#123;<br>    <span class="hljs-attr">&quot;lastSync&quot;</span>: <span class="hljs-string">&quot;2020-10-12 09:23:39&quot;</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>D:\nodejs\node.exe D:\nodejs\node_global\node_modules\picgo\bin\picgo upload</p>
+<p>C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\picgo\bin\picgo upload</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/typora/">typora</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/03/27/flutter/flutter-%E6%89%93%E5%8C%85release%E9%83%A8%E5%88%86%E5%8A%9F%E8%83%BD%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">flutter 打包release部分功能无法使用</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/03/25/tool/nginx%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD/">
+                        <span class="hidden-mobile">nginx配置静态资源加载</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        蒙ICP备18004897号-1
+      </a>
+    </span>
+    
+  </div>
+
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
